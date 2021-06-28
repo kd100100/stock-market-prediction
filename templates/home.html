@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>know & invest</title>
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename= 'logo1.png')}}">
+
+    <!-- Bootstarp CDNs -->
+    <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css' integrity='sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK' crossorigin='anonymous'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js' integrity='sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD' crossorigin='anonymous'></script>
+
+    <!-- JQuery CDN -->
+    <script src='https://code.jquery.com/jquery-3.5.1.js' integrity='sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=' crossorigin='anonymous'></script>
+
+    <!-- Fontawesome CDN -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- External Style Sheet -->
+    <link rel='stylesheet' href="{{ url_for('static',filename= 'style.css')}}">
+    <link rel='stylesheet' href="{{ url_for('static',filename= 'common.css')}}">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav class='navbar navbar-expand-lg navbar-light' style="padding: 0; padding-top: 5px;">
+                <div class='container-fluid'>
+                    <a class="navbar-brand" href="http://localhost:5000/">
+                        <img src="{{ url_for('static',filename= 'logo-trans.png')}}" alt="">
+                    </a>
+                    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+                    <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+                        <ul class='navbar-nav ml-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'>
+                            <a class='nav-link active' aria-current='page' href='http://localhost:5000/'>Home</a>
+                            </li>
+                            <li class='nav-item'>
+                            <a class='nav-link' href='http://localhost:5000/predict'>Predict</a>
+                            </li>
+                            <li class='nav-item'>
+                            <a class='nav-link' href='http://localhost:5000/news'>News</a>
+                            </li>
+                            <li class='nav-item'>
+                                {% if 'login' not in session %}
+                                <a class='nav-link l' href='http://localhost:5000/login'>Login <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                                {% else %}
+                                <a class='nav-link l' href='http://localhost:5000/logout'>Hi {{session['login']}}</a> 
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container"><img src="{{ url_for('static',filename= 'homebg.png')}}" alt="" class="homebg" onclick="window.location.href='http://localhost:5000/predict'"></div>
+    <!-- Change at 991px -->
+
+    <div class="content">
+        <div class="container">
+            <h1 class="title">How To Use?</h1>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="box">
+                        <h3>1</h3>
+                        <div class="mar"><p>Click<h1>Predict</h1>on the top right.</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="box">
+                        <h3>2</h3>
+                        <div class="mar"><p>Choose<h1>Shares</h1>on the following page.</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="box">
+                        <h3>3</h3>
+                        <div class="mar"><p>Select<h1>Date</h1>and give enter.</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="box">
+                        <h3>4</h3>
+                        <div class="mar"><p>See the<h1>Prediction</h1>and invest.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contactbg">
+        <div class="container">
+            <div class="row contact">
+                <div class="col-lg-4 col-md-12 branding">
+                    <img src="{{ url_for('static',filename= 'logo-trans.png')}}" width="250" onclick="window.location.href='http://localhost:5000/'" class="d-inline-block align-top" alt="" loading="lazy">
+                    &nbsp;
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                <div class="col-lg-3 col-md-5 col-sm-5">
+                    <p class="find">Find us at:</p>
+                    <p class="address">
+                        know & invest, <br>#123, XYZ Street, ABC Colony, <br>Choolaimedu, Chennai, <br>Pincode: 600094
+                    </p>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                <div class="col-lg-3 col-md-5 col-sm-5">
+                    <p class="find">Contact us at:</p>
+                    <p class="address">
+                        Email: <a href = "mailto: info@knowNinvest.com">info@knowNinvest.com</a><br>
+                        Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if ($(this).scrollTop()>0) {
+                    $("header").css({"background-color" : "#eef8ff"})
+                }
+                else {
+                    $("header").css({"background-color" : "transparent"})
+                }
+            })
+        })
+    </script>
+
+    <script src='https://code.jquery.com/jquery-3.5.1.js' integrity='sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=' crossorigin='anonymous'></script>
+
+</body>
+</html>

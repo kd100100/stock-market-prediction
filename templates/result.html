@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>know & invest</title>
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename= 'logo1.png')}}">
+
+    <!-- Bootstarp CDNs -->
+    <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css' integrity='sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK' crossorigin='anonymous'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js' integrity='sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD' crossorigin='anonymous'></script>
+
+    <!-- JQuery CDN -->
+    <script src='https://code.jquery.com/jquery-3.5.1.js' integrity='sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=' crossorigin='anonymous'></script>
+
+    <!-- Fontawesome CDN -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- External Style Sheet -->
+    <link rel='stylesheet' href="{{ url_for('static',filename= 'style.css')}}">
+    <link rel='stylesheet' href="{{ url_for('static',filename= 'common.css')}}">
+
+</head>
+<body style="background-color: #2E4AA0;">
+    <!-- Navbar -->
+    <header style="background-color: #eef8ff;">
+        <div class="container">
+            <nav class='navbar navbar-expand-lg navbar-light' style="padding: 0; padding-top: 5px;">
+                <div class='container-fluid'>
+                    <a class="navbar-brand" href="http://localhost:5000/">
+                        <img src="../static/logo-trans.png" alt="">
+                    </a>
+                    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+                    <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+                        <ul class='navbar-nav ml-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'>
+                            <a class='nav-link' href='http://localhost:5000/'>Home</a>
+                            </li>
+                            <li class='nav-item'>
+                            <a class='nav-link active' aria-current='page' href='http://localhost:5000/predict'>Predict</a>
+                            </li>
+                            <li class='nav-item'>
+                            <a class='nav-link' href='http://localhost:5000/news'>News</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link l' href='http://localhost:5000/login'>Login <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    
+    <!-- Change at 991px -->
+
+    <div class="content">
+        <div class="container">
+            <div class="row" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+                <div class="col-lg-12">
+                    <h2 class="title" style="padding-bottom: 5px;">Predicted Results</h2>
+                    <p>{{session['pred_company']}} - {{session['pred_date']}}</p>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="box">
+                        <div class="mar"><p><h2>Open</h2>₹ {{session['pred_open']}}</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="box">
+                        <div class="mar"><p><h2>Low</h2>₹ {{session['pred_low']}}</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="box">
+                        <div class="mar"><p><h2>High</h2>₹ {{session['pred_high']}}</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="box">
+                        <div class="mar"><p><h2>Close</h2>₹ {{session['pred_close']}}</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src='https://code.jquery.com/jquery-3.5.1.js' integrity='sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=' crossorigin='anonymous'></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>know & invest | Register</title>
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename= 'logo1.png')}}">
+    
+    <!-- Bootstarp CDNs -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css' integrity='sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK' crossorigin='anonymous'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js' integrity='sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD' crossorigin='anonymous'></script>
+    
+    <!-- JQuery CDN -->
+    <script src='https://code.jquery.com/jquery-3.5.1.js' integrity='sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=' crossorigin='anonymous'></script>
+    
+    <!-- Fontawesome CDN -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    
+    <!-- External Style Sheet -->
+    <link rel='stylesheet' href="{{ url_for('static',filename= 'login.css')}}">
+
+    <style>
+        @media only screen and (max-width: 870px){
+            .changepg{
+                margin-top: 0;
+            }
+            .sub{
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="row">
+
+        <!-- Image -->
+        <div class="rd50a"></div>
+
+        <!-- Login/Regiser -->
+        <div class="rd50">
+            <div class="dcen">
+                <div class="rlogo"><img src="{{ url_for('static',filename= 'logo.png')}}" onclick="window.location.href='http://localhost:5000/'" style="height: 70px; cursor: pointer;" alt=""></div>
+                <form method="POST">
+                    <label for="name" class="label_feild">Name</label><br>
+                    <input type="text" name="name" placeholder="Keerthivasan" class="rip_feild"><br>
+                    <label for="email" class="label_feild">Email</label><br>
+                    <input type="email" name="email" placeholder="email@knowNinvest.com" class="rip_feild"><br>
+                    <label for="password" class="label_feild">Password</label><br>
+                    <input type="password" name="password" placeholder="Password" class="rip_feild"><br>
+                    <input type="submit" value="Register" class="ip_feild sub">
+                </form>
+                <p class="changepg">Already an user? <span class="changebtn" onclick="window.location.href='http://localhost:5000/login'">Login here</span></p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">If you face any issues, drop a mail to <span style="text-decoration: underline; cursor: pointer;" onclick="window.location.href='mailto:info@knowNinvest.com'">info@knowNinvest.com</span></div>
+    
+    </div>
+    
+    <script src='https://code.jquery.com/jquery-3.5.1.js' integrity='sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=' crossorigin='anonymous'></script>
+
+</body>
+</html>
